@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ProjetoVendas.Models.Vendedor>
+
 @{
     ViewData["Title"] = "Vendedores";
 }
@@ -24,31 +25,40 @@
             <th>
                 @Html.DisplayNameFor(model => model.SalarioBase)
             </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+       
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataNascimento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SalarioBase)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalarioBase)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Departamento.Nome)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
 
         }
     </tbody>

@@ -7,7 +7,7 @@ using ProjetoVendas.Data;
 
 namespace ProjetoVendas.Migrations
 {
-    [DbContext(typeof(ProjetoVendasContext))]
+    [DbContext(typeof(VendasWebMvcContext))]
     [Migration("20200521163200_Initial")]
     partial class Initial
     {

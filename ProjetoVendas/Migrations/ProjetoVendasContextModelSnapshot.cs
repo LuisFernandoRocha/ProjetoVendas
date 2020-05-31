@@ -7,7 +7,7 @@ using ProjetoVendas.Data;
 
 namespace ProjetoVendas.Migrations
 {
-    [DbContext(typeof(ProjetoVendasContext))]
+    [DbContext(typeof(VendasWebMvcContext))]
     partial class ProjetoVendasContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -56,7 +56,7 @@ namespace ProjetoVendas.Migrations
 
                     b.Property<DateTime>("DataNascimento");
 
-                    b.Property<int?>("DepartamentoId");
+                    b.Property<int>("DepartamentoId");
 
                     b.Property<string>("Email");
 
@@ -82,7 +82,8 @@ namespace ProjetoVendas.Migrations
                 {
                     b.HasOne("ProjetoVendas.Models.Departamento", "Departamento")
                         .WithMany("Vendedores")
-                        .HasForeignKey("DepartamentoId");
+                        .HasForeignKey("DepartamentoId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

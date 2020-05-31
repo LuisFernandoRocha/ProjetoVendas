@@ -9,14 +9,14 @@ namespace ProjetoVendas.Data
 {
     public class SeedingService
     {
-        private ProjetoVendasContext _context;
-        public SeedingService(ProjetoVendasContext context)
+        private VendasWebMvcContext _context;
+        public SeedingService(VendasWebMvcContext context)
         {
             _context = context;
         }
         public void Seed()
         { 
-         if (_context.Departamento.Any() ||
+         if(_context.Departamento.Any() ||
                 _context.Vendedor.Any() ||
                 _context.RegistroDeVendas.Any())
             {

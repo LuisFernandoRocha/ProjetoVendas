@@ -12,9 +12,9 @@ namespace ProjetoVendas.Controllers
 {
     public class DepartamentosController : Controller
     {
-        private readonly ProjetoVendasContext _context;
+        private readonly VendasWebMvcContext _context;
 
-        public DepartamentosController(ProjetoVendasContext context)
+        public DepartamentosController(VendasWebMvcContext context)
         {
             _context = context;
         }
